@@ -1,0 +1,135 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'riscv' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : riscv
+Version: O-2018.06-SP4
+Date   : Sun Feb 21 17:58:20 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: control_unit/cw2_reg[16]
+              (rising edge-triggered flip-flop clocked by MY_CLK)
+  Endpoint: data_path/FETCH/Program_counter/Dout_reg[31]
+            (rising edge-triggered flip-flop clocked by MY_CLK)
+  Path Group: MY_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  riscv              5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock MY_CLK (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  control_unit/cw2_reg[16]/CK (DFFR_X1)                   0.00 #     0.00 r
+  control_unit/cw2_reg[16]/QN (DFFR_X1)                   0.07       0.07 r
+  control_unit/U8/ZN (INV_X1)                             0.03       0.09 f
+  control_unit/sel_immediate[0] (CU_MICROCODE_MEM_SIZE9_FUNC_SIZE3_OP_CODE_SIZE7_ALU_OPC_SIZE4_IR_SIZE32_CW_SIZE34)
+                                                          0.00       0.09 f
+  data_path/sel_immediate[0] (DATAPATH_datamem_size96_IR_SIZE32_data_size32_ALU_OPC_SIZE4)
+                                                          0.00       0.09 f
+  data_path/DECODE/sel_immediate[0] (decode_stage_IR_SIZE32_data_SIZE32_add_size5)
+                                                          0.00       0.09 f
+  data_path/DECODE/Imm_Block/sel[0] (immediate_block_ir_size32_data_size32)
+                                                          0.00       0.09 f
+  data_path/DECODE/Imm_Block/mux/S[0] (mux6to1_N32)       0.00       0.09 f
+  data_path/DECODE/Imm_Block/mux/U13/ZN (INV_X1)          0.03       0.12 r
+  data_path/DECODE/Imm_Block/mux/U11/ZN (NOR3_X1)         0.03       0.14 f
+  data_path/DECODE/Imm_Block/mux/U8/Z (BUF_X1)            0.06       0.20 f
+  data_path/DECODE/Imm_Block/mux/U107/ZN (AOI222_X1)      0.12       0.32 r
+  data_path/DECODE/Imm_Block/mux/U108/ZN (NAND2_X1)       0.05       0.37 f
+  data_path/DECODE/Imm_Block/mux/Y[11] (mux6to1_N32)      0.00       0.37 f
+  data_path/DECODE/Imm_Block/imm_out[11] (immediate_block_ir_size32_data_size32)
+                                                          0.00       0.37 f
+  data_path/DECODE/Address_addition/b[11] (adder_SIZE32_1)
+                                                          0.00       0.37 f
+  data_path/DECODE/Address_addition/add_20/B[11] (adder_SIZE32_1_DW01_add_1)
+                                                          0.00       0.37 f
+  data_path/DECODE/Address_addition/add_20/U441/ZN (NAND2_X1)
+                                                          0.04       0.41 r
+  data_path/DECODE/Address_addition/add_20/U487/ZN (OAI21_X1)
+                                                          0.03       0.45 f
+  data_path/DECODE/Address_addition/add_20/U473/ZN (AOI21_X1)
+                                                          0.06       0.50 r
+  data_path/DECODE/Address_addition/add_20/U486/ZN (OAI21_X1)
+                                                          0.04       0.54 f
+  data_path/DECODE/Address_addition/add_20/U485/ZN (AOI21_X1)
+                                                          0.06       0.60 r
+  data_path/DECODE/Address_addition/add_20/U493/ZN (OAI21_X1)
+                                                          0.03       0.63 f
+  data_path/DECODE/Address_addition/add_20/U288/ZN (AOI21_X1)
+                                                          0.04       0.67 r
+  data_path/DECODE/Address_addition/add_20/U490/ZN (OAI21_X1)
+                                                          0.03       0.70 f
+  data_path/DECODE/Address_addition/add_20/U280/ZN (AOI21_X1)
+                                                          0.04       0.74 r
+  data_path/DECODE/Address_addition/add_20/U491/ZN (OAI21_X1)
+                                                          0.03       0.78 f
+  data_path/DECODE/Address_addition/add_20/U284/ZN (AOI21_X1)
+                                                          0.04       0.82 r
+  data_path/DECODE/Address_addition/add_20/U492/ZN (OAI21_X1)
+                                                          0.03       0.85 f
+  data_path/DECODE/Address_addition/add_20/U289/ZN (AOI21_X1)
+                                                          0.04       0.89 r
+  data_path/DECODE/Address_addition/add_20/U494/ZN (OAI21_X1)
+                                                          0.03       0.93 f
+  data_path/DECODE/Address_addition/add_20/U283/ZN (AOI21_X1)
+                                                          0.04       0.97 r
+  data_path/DECODE/Address_addition/add_20/U495/ZN (OAI21_X1)
+                                                          0.03       1.00 f
+  data_path/DECODE/Address_addition/add_20/U244/ZN (INV_X1)
+                                                          0.03       1.03 r
+  data_path/DECODE/Address_addition/add_20/U242/ZN (OAI21_X1)
+                                                          0.03       1.06 f
+  data_path/DECODE/Address_addition/add_20/U4/CO (FA_X1)
+                                                          0.09       1.15 f
+  data_path/DECODE/Address_addition/add_20/U420/ZN (NAND2_X1)
+                                                          0.03       1.19 r
+  data_path/DECODE/Address_addition/add_20/U422/ZN (NAND3_X1)
+                                                          0.03       1.22 f
+  data_path/DECODE/Address_addition/add_20/U260/ZN (XNOR2_X1)
+                                                          0.05       1.28 f
+  data_path/DECODE/Address_addition/add_20/SUM[31] (adder_SIZE32_1_DW01_add_1)
+                                                          0.00       1.28 f
+  data_path/DECODE/Address_addition/z[31] (adder_SIZE32_1)
+                                                          0.00       1.28 f
+  data_path/DECODE/Mux_for_PC/B[31] (mux2to1_N32_7)       0.00       1.28 f
+  data_path/DECODE/Mux_for_PC/U3/ZN (NAND2_X1)            0.03       1.30 r
+  data_path/DECODE/Mux_for_PC/U4/ZN (NAND2_X1)            0.02       1.33 f
+  data_path/DECODE/Mux_for_PC/Y[31] (mux2to1_N32_7)       0.00       1.33 f
+  data_path/DECODE/instruction_address_out[31] (decode_stage_IR_SIZE32_data_SIZE32_add_size5)
+                                                          0.00       1.33 f
+  data_path/FETCH/fetch_in[31] (fetch_stage_IRAM_SIZE96_IR_SIZE32_data_SIZE32_IRAM_LENGTH8)
+                                                          0.00       1.33 f
+  data_path/FETCH/Program_counter/Din[31] (reg_data_size32_0)
+                                                          0.00       1.33 f
+  data_path/FETCH/Program_counter/U21/Z (MUX2_X1)         0.06       1.39 f
+  data_path/FETCH/Program_counter/Dout_reg[31]/D (DFFRS_X1)
+                                                          0.01       1.40 f
+  data arrival time                                                  1.40
+
+  clock MY_CLK (rise edge)                                1.51       1.51
+  clock network delay (ideal)                             0.00       1.51
+  clock uncertainty                                      -0.07       1.44
+  data_path/FETCH/Program_counter/Dout_reg[31]/CK (DFFRS_X1)
+                                                          0.00       1.44 r
+  library setup time                                     -0.04       1.40
+  data required time                                                 1.40
+  --------------------------------------------------------------------------
+  data required time                                                 1.40
+  data arrival time                                                 -1.40
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
